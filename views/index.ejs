@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .file-info {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>File sharing Website</h1>
+    </header>
+    <div class="container">
+        <% if(locals.fileLink != null) { %>
+            <div class="file-info">
+                Your file is uploaded.
+                <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+            </div>
+        <% } %>
+        <form action="/uploadFile" method="post" enctype="multipart/form-data">
+            <label for="file">File</label>
+            <input type="file" id="file" name="file" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Share</button>
+        </form>
+    </div>
+</body>
+</html>

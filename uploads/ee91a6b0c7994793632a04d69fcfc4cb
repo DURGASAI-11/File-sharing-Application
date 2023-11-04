@@ -1,0 +1,3 @@
+MONGODB_URI=mongodb+srv://barryallenshelby11:S@i8688535252@nodeexpressprojects.eutrdpx.mongodb.net/TaskSSS?retryWrites=true&w=majority
+SUPER_KEY='sdwieid-sfdfs-dsfsdd-dsdwe'
+JWT_COOKIE_EXPIRES_IN=30
